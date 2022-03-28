@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- MaterializeCSS CDN -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- My stylesheet -->
+    <link rel="stylesheet" href="/stylesheets/styles.css">
+</head>
+
+<body>
+    <header>
+        {{#if loggedIn}}
+        <!-- PROFILE DROPDOWN -->
+        <ul id="profile-dropdown" class="dropdown-content">
+            <li><a href="/dashboard"><i class="material-icons">person</i> Dashboard</a></li>
+            <li class="divider"></li>
+            <li><a href="/post/create"><i class="material-icons">add</i> New Post</a></li>
+            <li class="divider"></li>
+            <li><a href="/api/users/logout"><i class="material-icons">arrow_forward</i> Log Out</a>
+        </ul>
+        <!-- NAVIGATION -->
+        <div class="navbar-fixed">
+            <nav>
+                <div class="container nav-wrapper">
+                    <a href="/" class="brand-logo">The Blog Trog</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a id="dropdown-nav-item" class="dropdown-trigger" href="#!"
+                                data-target="profile-dropdown">{{username}}<i class="material-icons right"
+                                    id="dropdown-arrow">arrow_drop_down</i></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- END NAVIGATION -->
+        {{else}}
+        <!-- NAVIGATION -->
+        <div class="navbar-fixed">
+            <nav>
+                <div class="container nav-wrapper">
+                    <a href="/" class="brand-logo">The Blog Trog</a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="/login">Log In</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- END NAVIGATION -->
+        {{/if}}
+    </header>
+    <main class="container">
+        <!-- MAIN CONTENT -->
+    {{{body}}}
+    </main>
+    <footer class="page-footer">
+        <!-- FOOTER -->
+        <div class="container">
+            <div class="row">
+                <h5 class="center-align">
+                    Made with Love
+                </h5>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Associated Scripts -->
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- MaterializeCSS Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <!-- My Scripts -->
+    <script src="/javascript/loggedin.js"></script>
+</body>
+
+</html>

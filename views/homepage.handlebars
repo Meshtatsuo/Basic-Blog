@@ -1,0 +1,22 @@
+        <section>
+            <h2>Recent Blogs</h2>
+        </section>
+<section>
+<ol class="post-list">
+{{#each posts as |post|}}
+    <article class="post row z-depth-2">
+        <a href="/api/posts/{{post.id}}">
+            <div class="col s6">
+                <h5>{{post.title}}</h5>
+                <h6>{{post.post_url}}</h6>
+                <p id="caption">{{post.caption}}</p>
+            </div>
+            <div class="col s6 right-align">
+                <p>Posted by <a href="#">{{post.user.username}}</a></p>
+                <p>at {{post.created_at}}</p>
+            </div>
+        </a>
+    </article>
+{{/each}}
+</ol>
+</section>
