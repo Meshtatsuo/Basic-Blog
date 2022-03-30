@@ -32,13 +32,13 @@
     <div class="col s12">
         <p>Comment on this post: </p>
         <div class="row">
-            <form class="col s12" id="comment-form">
+            <form class="comment-form col s12">
                 <div class="input-field col s8">
-                    <textarea id="post-content" class="materialize-textarea"></textarea>
+                    <textarea id="comment-content" class="materialize-textarea"></textarea>
                     <label for="post-content"></label>
                 </div>
                 <div class="col s12 left-align">
-                    <button class=" btn waves-effect waves-light" type="submit" name="action">Save
+                    <button id="submit-comment" class=" btn  waves-effect waves-light" type="submit">Save
                         Changes<i class="material-icons right">send</i></button>
                 </div>
             </form>
@@ -48,18 +48,14 @@
 {{else}}
     <h5>Log in to comment!</h5>
 {{/if}}
-<!-- END USER COMMENT SECTION -->
+<!-- END ADD COMMENT SECTION -->
 
 <!-- Comment list -->
     <ol class="comment-list">
         {{#each post.comments as |comment|}}
-        <article class="post row z-depth-2">
-            <div class="col s12">
-                <p>Posted by: {{comment.user.username}} at {{comment.created_at}}</p>
-                <div class="divider"></div>
-                <p>{{comment.comment_text}}</p>
-            </div>
-        </article>
+            {{> comment comment}}
         {{/each}}
     </ol>
+
+<script src="/javascript/comment.js"></script>
 <!-- End Comment list -->

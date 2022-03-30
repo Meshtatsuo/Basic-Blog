@@ -72,7 +72,9 @@ router.get('/:id', (req, res) => {
                 plain: true
             });
             res.render('single-post', {
-                post
+                post,
+                loggedIn: req.session.loggedIn,
+                username: req.session.username
             });
         })
         .catch(err => {
@@ -80,6 +82,14 @@ router.get('/:id', (req, res) => {
             res.status(500).json(err);
         })
 });
+
+router.get('/create', (req, res) => {
+    if (!req.session) {
+        res.render('login');
+    } else {
+        res.render('new-post');
+    }
+})
 
 router.post('/', (req, res) => {
     // expects {title: 'Taskmaster goes public!', post_url: 'https://taskmaster.com/press', user_id: 1}

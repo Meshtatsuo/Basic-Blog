@@ -1,12 +1,9 @@
         <!-- COMMENT CARD CONTENT -->
-        <section id="post" class="row z-depth-2">
-            <a href="#">
-                <div class="col s6">
-                    <p>Posted by: <a href="#">Username</a></p>
-                    <p>at MM/DD/YYYY at 12:00PM</p>
-                    <p id="content">This is an example comment. I think this post is bull shit.
-                    </p>
-                </div>
-            </a>
-        </section>
+        <article class="post row z-depth-2">
+            <div class="col s12">
+                <p>Posted by: {{user.username}} at {{created_at}}</p>
+                <div class="divider"></div>
+                <p>{{comment_text}}</p>
+            </div>
+        </article>
         <!-- END COMMENT CARD CONTENT -->
