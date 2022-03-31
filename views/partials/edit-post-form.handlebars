@@ -5,22 +5,22 @@
                     <div class="row">
                         <!-- TITLE -->
                         <div class="title_field input-field col s6">
-                            <input id="title" type="text" class="validate">
+                            <input value = "{{title}}" id="title" type="text" class="validate">
                             <label for="title">TITLE: </label>
                         </div>
                         <!-- POST URL -->
                         <div class="input-field col s6">
-                            <input id="post_url" type="url" class="validate">
+                            <input value="{{post_url}}" id="post_url" type="url" class="validate">
                             <label for="post_url">URL: </label>
                         </div>
                         <!-- CAPTION -->
                         <div class="input-field col s8">
-                            <input id="caption" type="text" data-length="140">
+                            <input value="{{caption}}" id="caption" type="text" data-length="140">
                             <label for="caption">CAPTION: </label>
                         </div>
                         <!-- CONTENT -->
                         <div class="input-field col s12">
-                            <textarea id="post-content" class="materialize-textarea"></textarea>
+                            <textarea id="post-content" type="text" class="materialize-textarea">{{post_content}}</textarea>
                             <label for="post-content">Post Content</label>
                         </div>
                     </div>

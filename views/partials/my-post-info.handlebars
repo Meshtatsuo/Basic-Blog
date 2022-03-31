@@ -1,0 +1,25 @@
+<article class="post row z-depth-2">
+  <a href="/api/posts/{{id}}">
+    <div class="col s6">
+      <h5>{{title}}</h5>
+      <h6>{{post_url}}</h6>
+      <p id="caption">{{caption}}</p>
+    </div>
+    <div class="col s6 right-align">
+      <p>Posted by <a href="#">{{user.username}}</a></p>
+      <p>at {{created_at}}</p>
+    </div>
+  </a>
+  <div class="row">
+    <div class="edit-btn col s12 center-align">
+      <a id="{{id}}" class="edit-btn waves-effect waves-light btn"><i
+          class="edit-btn material-icons left"
+        >create</i>Edit Post</a>
+
+      <a
+        id="{{id}}"
+        class="delete-btn waves-effect waves-light btn red darken-4"
+      ><i class="material-icons left">remove_circle</i>Delete Post</a>
+    </div>
+  </div>
+</article>
