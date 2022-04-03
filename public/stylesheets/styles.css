@@ -8,6 +8,12 @@
       flex: 1 0 auto;
   }
 
+  nav ul li {
+      min-width: 175px;
+      width: 175px;
+      max-width: 200px;
+  }
+
   .btn {
       margin: 5px;
   }

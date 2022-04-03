@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/stylesheets/styles.css">
 </head>
 
-<body>
+<body class="grey lighten-2">
     <header>
         {{#if loggedIn}}
         <!-- PROFILE DROPDOWN -->
@@ -28,11 +28,11 @@
         </ul>
         <!-- NAVIGATION -->
         <div class="navbar-fixed">
-            <nav>
+            <nav class="row indigo darken-4 white-text">
                 <div class="container nav-wrapper">
                     <a href="/" class="brand-logo">The Blog Trog</a>
                     <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a id="dropdown-nav-item" class="dropdown-trigger" href="#!"
+                        <li><a id="dropdown-nav-item" class="dropdown-trigger right-align" href="#!"
                                 data-target="profile-dropdown">{{username}}<i class="material-icons right"
                                     id="dropdown-arrow">arrow_drop_down</i></a></li>
                     </ul>
@@ -43,10 +43,10 @@
         {{else}}
         <!-- NAVIGATION -->
         <div class="navbar-fixed">
-            <nav>
+            <nav class="row indigo darken-4 white-text">
                 <div class="container nav-wrapper">
                     <a href="/" class="brand-logo">The Blog Trog</a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <ul id="nav-mobile" class="right hide-on-med-and-down right-align">
                         <li><a href="/login">Log In</a></li>
                     </ul>
                 </div>
@@ -69,7 +69,7 @@
         <!-- MAIN CONTENT -->
     {{{body}}}
     </main>
-    <footer class="page-footer">
+    <footer class="page-footer indigo darken-4 white-text">
         <!-- FOOTER -->
         <div class="container">
             <div class="row">
