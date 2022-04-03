@@ -1,3 +1,4 @@
+// Create new post given information provided in the post creation form
 async function newPostSubmit(event) {
   event.preventDefault();
   console.log("Test");
@@ -7,6 +8,7 @@ async function newPostSubmit(event) {
   const post_caption = document.querySelector("#caption").value;
   const post_content = document.querySelector("#post-content").value;
 
+  // caption not required as it is auto generate if null
   if (post_title != "" && post_url != "" && post_content != "") {
     const response = await fetch("/api/posts/", {
       method: "POST",

@@ -25,7 +25,7 @@ Post.init({
             }
         },
         caption: {
-            type: DataTypes.STRING(140),
+            type: DataTypes.STRING(80),
             allowNull: false,
         },
         post_content: {
@@ -43,8 +43,8 @@ Post.init({
         hooks: {
             // Create caption from post_content if no caption proviided
             async beforeCreate(newPostData) {
-                if (!newPostData.caption) {
-                    let generatedCaption = newPostData.post_content.substring(0, 136);
+                if (newPostData.caption === "" || newPostData.caption.length > 80) {
+                    let generatedCaption = newPostData.post_content.substring(0, 76);
                     newPostData.caption = generatedCaption.concat(" ...");
                     return newPostData;
                 }
@@ -53,8 +53,8 @@ Post.init({
             },
             // Create caption from post_content if no caption proviided
             async beforeUpdate(updatedPostData) {
-                if (!updatedPostData.caption) {
-                    let generatedCaption = updatedPostData.post_content.substring(0, 136);
+                if (newPostData.caption === "" || newPostData.caption.length > 80) {
+                    let generatedCaption = updatedPostData.post_content.substring(0, 76);
                     updatedPostData.caption = generatedCaption.concat(" ...");
                     return updatedPostData;
                 }

@@ -5,7 +5,7 @@ const {
     User,
     Comment
 } = require('../models');
-
+// Get all posts and their attributed information
 router.get('/', (req, res) => {
     Post.findAll({
             attributes: [
@@ -17,6 +17,7 @@ router.get('/', (req, res) => {
                 'user_id',
                 'created_at',
             ],
+            // include comments
             include: [{
                     model: Comment,
                     attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
@@ -25,18 +26,19 @@ router.get('/', (req, res) => {
                         attributes: ['username']
                     }
                 },
+                // include username
                 {
                     model: User,
                     attributes: ['username']
                 }
             ]
         })
+        // Generate post data for each post and add it to posts array
         .then(dbPostData => {
             const posts = dbPostData.map(post => post.get({
                 plain: true
             }));
             // pass a single post object into the homepage template
-            console.log(req.session);
             res.render('homepage', {
                 posts,
                 loggedIn: req.session.loggedIn,
@@ -48,15 +50,17 @@ router.get('/', (req, res) => {
             res.status(500).json(err);
         })
 })
-
+// send user to login page
 router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// send user to sign up page
 router.get('/signup', (req, res) => {
     res.render('signup');
 });
 
+// send user to dashboard and display all that user's posts
 router.get('/dashboard', (req, res) => {
     if (req.session) {
         Post.findAll({
@@ -108,6 +112,7 @@ router.get('/dashboard', (req, res) => {
     }
 })
 
+// display logged out page when user logs out
 router.get('/loggedout', (req, res) => {
     res.render('loggedout');
 })

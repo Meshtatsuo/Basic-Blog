@@ -1,7 +1,9 @@
+// Handle creation of comment based on input on the comment form
 async function commentFormHandler(event) {
     event.preventDefault();
 
     const comment_text = document.querySelector('#comment-content').value;
+    // use window location to find the id of the post
     const post_id = window.location.toString().split('/')[
         window.location.toString().split('/').length - 1
     ];

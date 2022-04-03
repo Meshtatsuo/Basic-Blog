@@ -3,6 +3,7 @@ const {
     Comment
 } = require('../../models');
 
+// get all comments
 router.get('/', (req, res) => {
     Comment.findAll()
         .then(dbCommentData => res.json(dbCommentData))
@@ -11,7 +12,7 @@ router.get('/', (req, res) => {
             res.status(500).json(err);
         });
 });
-
+// create new comment
 router.post('/', (req, res) => {
     // check if user is logged in
     if (req.session) {
@@ -29,7 +30,7 @@ router.post('/', (req, res) => {
         res.render('/login');
     }
 });
-
+// delete comment
 router.delete('/:id', (req, res) => {
     Comment.destroy({
             where: {

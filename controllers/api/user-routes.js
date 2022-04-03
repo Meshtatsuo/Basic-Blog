@@ -26,6 +26,7 @@ router.get('/', async (req, res) => {
     }
 });
 
+// get user by id, exclude password
 router.get('/:id', (req, res) => {
     User.findOne({
             attributes: {
@@ -69,8 +70,9 @@ router.get('/:id', (req, res) => {
         });
 });
 
+// create new user
 router.post('/', (req, res) => {
-    // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+    // expects {username: 'example', email: 'example@gmail.com', password: 'password1234'}
     User.create({
             username: req.body.username,
             email: req.body.email,
@@ -91,6 +93,7 @@ router.post('/', (req, res) => {
         });
 });
 
+// compare user credentials and create session if correct
 router.post('/login', (req, res) => {
     console.log(req);
     User.findOne({
@@ -128,6 +131,7 @@ router.post('/login', (req, res) => {
     });
 });
 
+// destroy current user session
 router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
         req.session.destroy(() => {
@@ -138,6 +142,7 @@ router.post('/logout', (req, res) => {
     }
 });
 
+// update user info
 router.put('/:id', (req, res) => {
     // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
 
@@ -163,6 +168,7 @@ router.put('/:id', (req, res) => {
         });
 });
 
+// delete user info
 router.delete('/:id', (req, res) => {
     User.destroy({
             where: {
