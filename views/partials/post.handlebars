@@ -1,0 +1,17 @@
+<article class="post row z-depth-2 grey lighten-4">
+  <a href="/api/posts/{{id}}">
+    <div class="col s6">
+      <h5>{{title}}</h5>
+      <h6>{{post_url}}</h6>
+      <p id="caption">{{caption}}</p>
+    </div>
+    <div class="col s6 right-align">
+      <p>Posted by <a href="#">{{user.username}}</a></p>
+      <p>at {{created_at}}</p>
+    </div>
+        <div class="divider col s12"></div>
+    <div class="col s12">
+      <p>{{post_content}}</p>
+    </div>
+  </a>
+</article>

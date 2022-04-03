@@ -8,20 +8,8 @@
 
 <!-- POST CONTENT -->
 
-<section id="post" class="row z-depth-2 grey lighten-4">
-
-    <div class="col s6">
-    <h5>{{post.title}}</h5>
-        <a href="{{post.post_url}}" target="_blank">
-            
-            <h6>{{post.post_url}}</h6>
-        </a>
-        <p id="content">{{post.post_content}}</p>
-    </div>
-    <div class="col s6 right-align">
-        <p>Posted by: <a href="#">{{post.user.username}}</a></p>
-        <p>at {{post.created_at}}</p>
-    </div>
+<section id="post" >
+    {{> post post}}
 </section>
 
 <!-- END POST CONTENT -->
