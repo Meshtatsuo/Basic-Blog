@@ -17,11 +17,18 @@ const postData = [{
         user_id: "2"
     },
     {
-        title: "Games journalist calls it quits after inheritiing millions from father.",
+        title: "Developer moves into game dev after inheriting millions from father.",
         post_url: "https://www.twitter.com",
-        caption: "Dad isn't dead, might as well work in games.",
+        caption: "'I can finally afford to work on their salaries!'",
         post_content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu lorem tincidunt, dictum nulla eget, dignissim dolor. Duis malesuada faucibus neque, non accumsan felis mattis sollicitudin. Vestibulum convallis interdum tortor, sed ultrices mi tincidunt eget. Sed auctor lobortis ex, a condimentum justo mattis non. Integer venenatis, arcu non feugiat volutpat, odio libero placerat diam, sodales vehicula purus erat ac ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla id varius orci. Nullam tristique tortor in risus aliquam efficitur. Sed vestibulum lectus a urna condimentum, eu rutrum sem mollis. Mauris sed dui in arcu faucibus volutpat. Integer tempus nisl ac mi vestibulum dignissim.",
         user_id: "1"
+    },
+    {
+        title: "Halo fans upset new show portrays favorite characters in more than one dimension.",
+        post_url: "https://www.twitter.com",
+        caption: "'Why can't we have more explosions?'",
+        post_content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eu lorem tincidunt, dictum nulla eget, dignissim dolor. Duis malesuada faucibus neque, non accumsan felis mattis sollicitudin. Vestibulum convallis interdum tortor, sed ultrices mi tincidunt eget. Sed auctor lobortis ex, a condimentum justo mattis non. Integer venenatis, arcu non feugiat volutpat, odio libero placerat diam, sodales vehicula purus erat ac ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nulla id varius orci. Nullam tristique tortor in risus aliquam efficitur. Sed vestibulum lectus a urna condimentum, eu rutrum sem mollis. Mauris sed dui in arcu faucibus volutpat. Integer tempus nisl ac mi vestibulum dignissim.",
+        user_id: "3"
     }
 ];
 
